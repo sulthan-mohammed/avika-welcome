@@ -57,7 +57,7 @@ function App() {
         <div className='header-container'>
           <div className='heading'>Welcome to Avika</div>
           <div className='sub-heading'>
-            Your journey towards better health starts here. Click the link below to download the Avika app and embark on a personalized healthcare experience.
+            Your journey towards better health starts here.
           </div>
         </div>
         <div className='store-container'>
