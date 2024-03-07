@@ -13,7 +13,7 @@ const storeItems = [
     platform: 'android',
     icon: DownloadIcon,
     heading: 'Download Avika App',
-    helperText: 'Tap here to download the app on Google Play Store.'
+    helperText: 'Tap here to download the app.'
   }
   // {
   //   platform: 'ios',
