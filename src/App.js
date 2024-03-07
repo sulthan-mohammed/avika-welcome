@@ -2,10 +2,10 @@ import React from "react";
 import './App.css';
 import BottomArtForMobile from './assets/bottomArt1.svg';
 import AvikaLogo from './assets/AvikaLogo.svg';
-import PlaystoreIcon from './assets/play-store-color-icon.svg';
+// import PlaystoreIcon from './assets/play-store-color-icon.svg';
 import SendIcon from './assets/sendIcon.svg';
 import DownloadIcon from './assets/downloadIcon.png';
-import AppStoreIcon from './assets/app-store.png';
+// import AppStoreIcon from './assets/app-store.png';
 
 // Define store items as an array of objects
 const storeItems = [
