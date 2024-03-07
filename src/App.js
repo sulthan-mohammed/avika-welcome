@@ -4,25 +4,28 @@ import BottomArtForMobile from './assets/bottomArt1.svg';
 import AvikaLogo from './assets/AvikaLogo.svg';
 import PlaystoreIcon from './assets/play-store-color-icon.svg';
 import SendIcon from './assets/sendIcon.svg';
+import DownloadIcon from './assets/downloadIcon.png';
 import AppStoreIcon from './assets/app-store.png';
 
 // Define store items as an array of objects
 const storeItems = [
   {
     platform: 'android',
-    icon: PlaystoreIcon,
-    heading: 'Play Store',
+    icon: DownloadIcon,
+    heading: 'Download Avika App',
     helperText: 'Tap here to download the app on Google Play Store.'
-  },
-  {
-    platform: 'ios',
-    icon: AppStoreIcon,
-    heading: 'App Store',
-    helperText: 'Tap here to download the app on the App Store.'
   }
+  // {
+  //   platform: 'ios',
+  //   icon: AppStoreIcon,
+  //   heading: 'App Store',
+  //   helperText: 'Tap here to download the app on the App Store.'
+  // }
 ];
 
 function App() {
+
+  const[isLoading, setIsLoading] = React.useState(false);
   // Detect the user agent to determine the platform
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
   let platform = '';
@@ -40,20 +43,32 @@ function App() {
 
   const handleNavigator = () => {
     console.log('clicked');
-    if (platform === 'android') {
-        window.location.href = 'https://play.google.com/store/apps';
-    } else if (platform === 'ios') {
-        window.location.href = 'https://apps.apple.com';
-    }else{
-      console.log(' device not found')
-    }
+    setIsLoading(true);
+window.open('https://drive.google.com/drive/folders/1fXWlinmpzZ2gCyYAUqNRWBn95HCD5B54', '_blank');
+    setIsLoading(false);
+    // if (platform === 'android') {
+    //     window.location.href = 'https://play.google.com/store/apps';
+    // } else if (platform === 'ios') {
+    //     window.location.href = 'https://apps.apple.com';
+    // }else{
+    //   console.log(' ')
+    // }
 };
   return (
     <div className='dashboard-screen'>
       <div className='logo-container'>
         <img src={AvikaLogo} alt='logo'/>
       </div>
-      <div className='main-container'>
+      {
+        isLoading &&
+        <div>
+          <div/>
+          <div>Loading...</div>
+        </div>
+      }
+      {
+        !isLoading &&
+        <div className='main-container'>
         <div className='header-container'>
           <div className='heading'>Welcome to Avika</div>
           <div className='sub-heading'>
@@ -62,18 +77,18 @@ function App() {
         </div>
         <div className='store-container'>
           {renderStoreItems.map((item, index) => (
-            <div onClick={handleNavigator
-            } className='store-item' key={index}>
-              <img width={35} height={35} src={item.icon} alt={`${item.heading} icon`}/>
-              <div className='store-details'>
-                <div className='store-heading'>{item.heading}</div>
-                <div className='store-helper-text'>{item.helperText}</div>
+              <div onClick={handleNavigator
+              } className='store-item' key={index}>
+                <img width={35} height={35} src={item.icon} alt={`${item.heading} icon`}/>
+                <div className='store-details'>
+                  <div className='store-heading'>{item.heading}</div>
+                  <div className='store-helper-text'>{item.helperText}</div>
+                </div>
+                <img width={35} height={35} src={SendIcon} alt='send icon'/>
               </div>
-              <img width={35} height={35} src={SendIcon} alt='send icon'/>
-            </div>
           ))}
         </div>
-      </div>
+      </div>}
       <div className='dashboard-art-holder'>
         <img className='image-width' src={BottomArtForMobile} alt='art'/>
       </div>
