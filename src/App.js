@@ -4,9 +4,8 @@ import BottomArtForMobile from './assets/bottomArt1.svg';
 import AvikaLogo from './assets/AvikaLogo.svg';
 import PlaystoreIcon from './assets/play-store-color-icon.svg';
 import SendIcon from './assets/sendIcon.svg';
-import DownloadIcon from './assets/downloadIcon.png';
 import AppStoreIcon from './assets/app-store.png';
-import { isAndroid, isIOS ,isMacOs} from 'react-device-detect';
+import {  isIOS ,isMacOs} from 'react-device-detect';
 
 // Define store items as an array of objects
 const storeItems = [
@@ -39,7 +38,7 @@ function App() {
   const handleNavigator = () => {
     setIsLoading(true);
     if (platform === 'android') {
-      window.location.href = 'https://drive.google.com/drive/u/0/folders/1fXWlinmpzZ2gCyYAUqNRWBn95HCD5B54';
+      window.location.href = 'https://play.google.com/store/apps/details?id=com.avikaMindHealth';
     } else if (platform === 'ios') {
       window.location.href = 'https://apps.apple.com/us/app/Avika/id6472718229?uo=4';
     }
